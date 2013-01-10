@@ -89,4 +89,24 @@
 \c_strc_itemgroups_spacing_mode\plusone
 \protect
 
+\setvariables
+    [metadata]
+    [
+      set={\setups{titlepage}},
+    ]
+
+\startsetups titlepage
+  \startstandardmakeup[align=middle]
+    \getvariable{metadata}{title}
+    \blank[2*big]
+
+    \getvariable{metadata}{author}
+    \blank[big]
+
+    \getvariable{metadata}{location}
+    \blank[none]
+    \getvariable{metadata}{date}
+  \stopstandardmakeup
+\stopsetups
+
 \stopenvironment
