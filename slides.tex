@@ -40,7 +40,11 @@
 \setupbackgrounds[page][background=color, backgroundcolor=lightgray]
 
 \setupfooter[style=small,color=darkblue]
-\setupfootertexts[][\userpagenumber/\lastuserpage]
+\setupfootertexts[\setups{footer:metadata}][\userpagenumber/\lastuserpage]
+
+\startsetups footer:metadata
+  \getvariable{metadata}{title} (\getvariable{metadata}{author})
+\stopsetups
 
 \definehead
     [slide]
