@@ -95,17 +95,22 @@
       set={\setups{titlepage}},
     ]
 
+\definestyle[titlestyle]   [style=\ssbfd, color=darkred]
+\definestyle[authorstyle]  [style=\ssb,   color=darkblue]
+\definestyle[datestyle]    [style=\tf,    color=]
+\definestyle[locationstyle][style=\tf,    color=]
+
 \startsetups titlepage
   \startstandardmakeup[align=middle]
-    \getvariable{metadata}{title}
+    \titlestyle{\getvariable{metadata}{title}}
     \blank[2*big]
 
-    \getvariable{metadata}{author}
+    \authorstyle{\getvariable{metadata}{author}}
     \blank[big]
 
-    \getvariable{metadata}{location}
+    \locationstyle{\getvariable{metadata}{location}}
     \blank[none]
-    \getvariable{metadata}{date}
+    \datestyle{\getvariable{metadata}{date}}
   \stopstandardmakeup
 \stopsetups
 
