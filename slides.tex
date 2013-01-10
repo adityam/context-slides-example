@@ -60,6 +60,15 @@
       headcolor=darkred,
     ]
 
+\startuseMPgraphic{itemize:main}
+  save p; path p;
+  p := fullsquare scaled 1.5ExHeight;
+  fill p withcolor \MPcolor{darkred};
+\stopuseMPgraphic
+
+\definesymbol[itemize:main][\useMPgraphic{itemize:main}]
+
+\setupitemize[1][symbol=itemize:main]
 
 
 \stopenvironment
