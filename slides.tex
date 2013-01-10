@@ -68,9 +68,17 @@
   fill p withcolor \MPcolor{darkred};
 \stopuseMPgraphic
 
+\startuseMPgraphic{itemize:nested}
+  save p; path p;
+  p := ( (0,-0.5)--(0,0.5)--(0.866,0)--cycle ) scaled ExHeight;
+  fill p withcolor \MPcolor{darkred};
+\stopuseMPgraphic
+
 \definesymbol[itemize:main][\useMPgraphic{itemize:main}]
+\definesymbol[itemize:nested][\useMPgraphic{itemize:nested}]
 
 \setupitemize[1][symbol=itemize:main]
+\setupitemize[2][symbol=itemize:nested, width=1.5ex]
 \setupitemize[2][nowhite]
 
 \unprotect
