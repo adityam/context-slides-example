@@ -1,5 +1,8 @@
 \environment slides
 
+% To enable the use of sample images in ConTeXt distrubtion
+\setupexternalfigures[location={local,global,default}]
+
 \starttext
 
 \setvariables
@@ -45,5 +48,34 @@
   and a long line following the display math. 
 
 \stopslide
+
+\startslide[title={Horizontal Image}]
+  \startplacefigure
+    \externalfigure[hacker][horizontal]
+  \stopplacefigure
+\stopslide
+
+\startslide[title={Horizontal Image with text}]
+  \input ward
+
+  \startplacefigure
+    \externalfigure[hacker][horizontal]
+  \stopplacefigure
+\stopslide
+
+\startslide[title={Vertical Image}]
+  \startplacefigure
+    \externalfigure[mill][vertical]
+  \stopplacefigure
+\stopslide
+
+\startslide[title={Vertical Image with text}]
+  \startplacefigure[location=left]
+    \externalfigure[hacker][vertical][width=0.5\textwidth]
+  \stopplacefigure
+  \input ward
+
+\stopslide
+
 
 \stoptext
