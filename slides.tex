@@ -117,12 +117,14 @@
 \setupformula
     [spacebefore={nowhite,quarterline}, spaceafter={back,nowhite,quarterline}]
 
+
 \setupcaptions
     [
       number=no,
     ]
 
 \definemeasure[page][\dimexpr\pagegoal-\pagetotal-\lineheight\relax]
+\definemeasure[shortpage][\dimexpr\pagegoal-\pagetotal-\lineheight-2\bigskipamount\relax]
 
 \defineexternalfigure
     [horizontal]
@@ -132,4 +134,11 @@
       factor=max,
     ]
 
+\defineexternalfigure
+    [vertical]
+    [
+      width=0.5\textwidth,
+      height=\measure{shortpage},
+      factor=max,
+    ]
 \stopenvironment
