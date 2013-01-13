@@ -50,8 +50,26 @@
 
 \setupbackgrounds[page][background={page:background}]
 
+\usemodule[visualcounter]
+
+\definevisualcounter
+    [userpage]
+    [countdown]
+    [
+      counter=userpage,
+      palette=counter,
+    ]
+
+\definepalet
+    [counter]
+    [
+      past=darkred,
+      active=darkblue,
+      future=darkgray,
+    ]
+
 \setupfooter[style=small,color=darkblue]
-\setupfootertexts[\setups{footer:metadata}][\userpagenumber/\lastuserpage]
+\setupfootertexts[\setups{footer:metadata}][\tfx\usevisualcounter{userpage}]
 
 \startsetups footer:metadata
   \getvariable{metadata}{title} (\getvariable{metadata}{author})
