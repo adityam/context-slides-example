@@ -37,7 +37,15 @@
     ]
 
 
-\setupbackgrounds[page][background=color, backgroundcolor=lightgray]
+\startreusableMPgraphic {page:background}
+  StartPage;
+    fill Page withcolor \MPcolor{lightgray};
+  StopPage;
+\stopreusableMPgraphic
+
+\defineoverlay [page:background][\reuseMPgraphic{page:background}]
+
+\setupbackgrounds[page][background={page:background}]
 
 \setupfooter[style=small,color=darkblue]
 \setupfootertexts[\setups{footer:metadata}][\userpagenumber/\lastuserpage]
