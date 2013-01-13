@@ -39,7 +39,10 @@
 
 \startreusableMPgraphic {page:background}
   StartPage;
-    fill Page withcolor \MPcolor{lightgray};
+    save p; path p;
+    p := Page superellipsed 0.98;
+    fill Page withcolor \MPcolor{darkred};
+    fill p withcolor \MPcolor{lightgray};
   StopPage;
 \stopreusableMPgraphic
 
