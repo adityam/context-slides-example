@@ -36,13 +36,18 @@
       bottomspace=1mm,
     ]
 
+\definecolor[background:light][lightgray]
+\definecolor[background:dark] [darkgray]
+
+\definecolor[foreground:contrast]    [darkred]
+\definecolor[foreground:altcontrast] [darkblue]
 
 \startreusableMPgraphic {page:background}
   StartPage;
     save p; path p;
     p := Page superellipsed 0.98;
-    fill Page withcolor \MPcolor{darkred};
-    fill p withcolor \MPcolor{lightgray};
+    fill Page withcolor \MPcolor{foreground:contrast};
+    fill p withcolor \MPcolor{background:light};
   StopPage;
 \stopreusableMPgraphic
 
@@ -63,12 +68,12 @@
 \definepalet
     [counter]
     [
-      past=darkred,
-      active=darkblue,
-      future=darkgray,
+      past=foreground:contrast,
+      active=foreground:altcontrast,
+      future=background:dark,
     ]
 
-\setupfooter[style=small,color=darkblue]
+\setupfooter[style=small,color=foreground:altcontrast]
 \setupfootertexts[\setups{footer:metadata}][\tfx\usevisualcounter{userpage}]
 
 \startsetups footer:metadata
@@ -80,7 +85,7 @@
     [subject]  
     [
       style=\ssbfc,
-      color=darkred,
+      color=foreground:contrast,
       alternative=middle,
       hidenumber=yes,
       page=yes,
@@ -90,7 +95,7 @@
 \setupitemize
     [
       headstyle=\ssa,
-      headcolor=darkred,
+      headcolor=foreground:contrast,
       afterhead={\blank[none]},
       inbetween={\blank[2*big]},
     ]
@@ -98,13 +103,13 @@
 \startuseMPgraphic{itemize:main}
   save p; path p;
   p := fullsquare scaled 1.5ExHeight;
-  fill p withcolor \MPcolor{darkred};
+  fill p withcolor \MPcolor{foreground:contrast};
 \stopuseMPgraphic
 
 \startuseMPgraphic{itemize:nested}
   save p; path p;
   p := ( (0,-0.5)--(0,0.5)--(0.866,0)--cycle ) scaled ExHeight;
-  fill p withcolor \MPcolor{darkred};
+  fill p withcolor \MPcolor{foreground:contrast};
 \stopuseMPgraphic
 
 \definesymbol[itemize:main][\useMPgraphic{itemize:main}]
@@ -124,8 +129,8 @@
       set={\setups{titlepage}},
     ]
 
-\definestyle[titlestyle]   [style=\ssbfd, color=darkred]
-\definestyle[authorstyle]  [style=\ssb,   color=darkblue]
+\definestyle[titlestyle]   [style=\ssbfd, color=foreground:contrast]
+\definestyle[authorstyle]  [style=\ssb,   color=foreground:altcontrast]
 \definestyle[datestyle]    [style=\tf,    color=]
 \definestyle[locationstyle][style=\tf,    color=]
 
