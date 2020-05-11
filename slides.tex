@@ -3,7 +3,7 @@
 \definefontfeature
   [default]
   [default]
-  [compose=yes]
+  [compose=yes, expansion=quality, protrusion=quality]
 
 \definefontfamily [mainface] [rm] [Fontin]
 \definefontfamily [mainface] [ss] [Delicious]
@@ -11,6 +11,8 @@
 \definefontfamily [mainface] [mm] [Neo Euler]
 
 \setupbodyfont[mainface, 12pt]
+
+\setupalign[hanging]
 
 \setuppapersize [S4]
 
